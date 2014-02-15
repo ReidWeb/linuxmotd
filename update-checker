@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo apt-get update
+sudo apt-get upgrade -d -y | grep 'upgraded,' | awk {'print $1'} > /usr/local/bin/updates-available 
+echo "Update Check Complete"
+date >> /usr/local/bin/update-checker.log
