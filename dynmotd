@@ -6,15 +6,8 @@ GROUPZ=`groups`
 USER=`whoami`
 ADMINS=`cat /etc/group | grep --regex "^sudo" | awk -F: '{print $4}' | tr ',' '|'`
 ADMINSLIST=`grep -E $ADMINS /etc/passwd | tr ':' ' ' | tr ',' ' ' | awk {'print $5,$6,$1'} | tr '\n' ',' | sed '$s/.$//'`
-UPDATESAVAIL=`cat /usr/local/bin/updates-available`
+UPDATESAVAIL=`cat /etc/dynmotd/updates-available`
  
-if [[ $GROUPZ == *irc* ]]; then
-ENDSESSION=`cat /etc/security/limits.conf | grep "@irc" | grep maxlogins | awk {'print $4'}`
-PRIVLAGED="IRC Account"
-else
-ENDSESSION="Unlimited"
-PRIVLAGED="Regular User"
-fi
 if [[ $GROUPZ == "$USER sudo" ]]; then
 USERGROUP="Administrator"
 elif [[ $USER = "root" ]]; then
@@ -24,10 +17,7 @@ USERGROUP="Regular User"
 else
 USERGROUP="$GROUPZ"
 fi
-if [[ $ADMINNAMES == "" ]]; then
-ADMINPRINT="Goats"
-fi
-echo -e "\033[1;32m `cat /usr/local/bin/dynmotdart`
+echo -e "\033[1;32m `cat /etc/dynmotd/dynmotdart`
 \033[0;35m+++++++++++++++++: \033[0;37mSystem Data\033[0;35m :+++++++++++++++++++
 \033[0;35m+       \033[0;37mHostname \033[0;35m= \033[1;32m`hostname`
 \033[0;35m+        \033[0;37mAddress \033[0;35m= \033[1;32m`curl --silent http://ipecho.net/plain; echo`
