@@ -20,7 +20,8 @@ fi
 echo -e "\033[1;32m `cat /etc/dynmotd/dynmotdart`
 \033[0;35m+++++++++++++++++: \033[0;37mSystem Data\033[0;35m :+++++++++++++++++++
 \033[0;35m+       \033[0;37mHostname \033[0;35m= \033[1;32m`hostname`
-\033[0;35m+        \033[0;37mAddress \033[0;35m= \033[1;32m`curl --silent http://ipecho.net/plain; echo`
+\033[0;35m+   \033[0;37mIPv4 Address \033[0;35m= \033[1;32m`ip addr show eth0 | grep "inet\ " | awk {'print $2'}`
+\033[0;35m+   \033[0;37mIPv6 Address \033[0;35m= \033[1;32m`ip addr show eth0 | grep -m 1 "inet6\ " | awk {'print $2'}`	 
 \033[0;35m+         \033[0;37mKernel \033[0;35m= \033[1;32m`uname -r`
 \033[0;35m+         \033[0;37mDistro \033[0;35m= \033[1;32m`cat /etc/*release | grep "PRETTY_NAME" | cut -d "=" -f 2- | sed 's/"//g'`
 \033[0;35m+         \033[0;37mUptime \033[0;35m= \033[1;32m`uptime | sed 's/.*up ([^,]*), .*/1/'`
