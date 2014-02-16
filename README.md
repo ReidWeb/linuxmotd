@@ -11,3 +11,4 @@ Create a directory to install the motd scripts to:
 sudo mkdir /etc/dynmotd
 ```
 
+WORK IN PROGESS
