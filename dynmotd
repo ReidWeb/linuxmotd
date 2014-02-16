@@ -38,5 +38,5 @@ echo -e "\033[1;32m `cat /etc/dynmotd/dynmotdart`
 \033[0;35m+        \033[0;37mScreens \033[0;35m= \033[1;32m`screen -ls`
 \033[0;35m+++++++++++++: \033[0;37mHelpful Information\033[0;35m :+++++++++++++++    
 \033[0;35m+ \033[0;37mAdministrators \033[0;35m= \033[1;32m$ADMINSLIST
-\033[0;37m+
+\033[0;37m
 "
