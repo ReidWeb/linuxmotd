@@ -1,6 +1,6 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get upgrade -d -y | grep 'upgraded,' | awk {'print $1'} > /usr/local/bin/updates-available 
+sudo apt-get upgrade -d -y | grep 'upgraded,' | awk {'print $1'} > /etc/motd/updates-available 
 echo "Update Check Complete"
-date >> /usr/local/bin/update-checker.log
+date >> /etc/motd/update-checker.log
