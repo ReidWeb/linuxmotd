@@ -1,7 +1,7 @@
 Dynamic Linux MOTD
 =========
 
-Dynamically Generated MOTD for Linux Servers
+Dynamically Generated MOTD for Linux Servers (Currently Debian based only)
 
 ## Installation
 
