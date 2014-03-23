@@ -19,7 +19,7 @@ cd linuxmotd
 
 ### ASCII Art
 
-In the input prompt, enter the directory to which you want to install tbe scripts - Defaults to /etc/dynmotd/
+In the input prompt, enter the directory to which you want to install the scripts - Defaults to /etc/dynmotd/
 
 Now add some ASCII art by editing the file 'dynmotdart' in the installation directory, ASCII art can be generated at:
 http://ruletheweb.co.uk/figlet/
