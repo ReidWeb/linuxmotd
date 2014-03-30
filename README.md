@@ -32,7 +32,7 @@ sudo crontab -e
 ```
 Append the following to the bottom of the file
 ```bash
-0 * * * * /etc/dynmotd/update-checker
+0 * * * * /etc/dynmotd/update-checker.sh
 ```
 
 ### Setup MOTD to display on connect
@@ -80,5 +80,5 @@ sudo nano /etc/profile
 ```
 Append the following line to the bottom of the file:
 ```bash
-/usr/local/bin/dynmotd
+/etc/dynmotd/dynmotd.sh
 ```
