@@ -18,6 +18,7 @@ Run the 'installation' script
 cd linuxmotd
 ./install.sh
 ```
+I'd recommend installing to /etc/dynmotd/, if you don't input anything it will default to /etc/dynmotd/. If you decided to use another directory, remember to change the directories below
 
 ### ASCII Art
 
