@@ -5,7 +5,7 @@ Dynamically Generated MOTD for Linux Servers
 
 Compatibility: Debian based Distributions
 
-![screenshot](http://download.reidweb.com/dynmotdimg.png)
+![animated-screenshot](http://download.reidweb.com/dynmotdimg.gif)
 
 ## Installation
 
