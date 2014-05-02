@@ -11,7 +11,7 @@ Compatibility: Debian based Distributions
 
 Clone the github repository
 ```bash
-git clone git@github.com:ReidWeb/linuxmotd.git
+git clone https://github.com/ReidWeb/linuxmotd.git
 ```
 Run the 'installation' script
 ```bash
