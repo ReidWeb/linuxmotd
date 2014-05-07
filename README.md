@@ -16,7 +16,7 @@ git clone https://github.com/ReidWeb/linuxmotd.git
 Run the 'installation' script
 ```bash
 cd linuxmotd
-./install.sh
+sudo ./install.sh
 ```
 I'd recommend installing to /etc/dynmotd/, if you don't input anything it will default to /etc/dynmotd/. If you decided to use another directory, remember to change the directories below
 
@@ -64,7 +64,7 @@ PrintMotd no
 ```
 Then restart the ssh service
 ```bash
-/etc/init.d/ssh restart
+sudo /etc/init.d/ssh restart
 ```
 Modify /etc/pam.d/login
 ```bash
