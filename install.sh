@@ -3,11 +3,14 @@
 #!/bin/bash
 #!/bin/bash
 
-echo -ne "\033[0;32mSelect installation directory > \033[1;37m"
-read installdir
-if  [[ $installdir = "" ]]
+echo -ne "\033[0;32mPlease input installation directory > \033[1;37m"
+read dirinput
+size = ${#dirinput}
+elif  [[ $dirinput = 0 ]]
 then
 installdir = "/etc/dynmotd"
+else
+installdir = $dirinput
 fi
 
 mkdir $installdir
@@ -21,4 +24,5 @@ chmod 755 $installdir/update-checker.sh
 touch $installdir/updates-available
 chmod 755 $installdir/updates-available
 echo "--" >> $installdir/updates-available
+$installdir/update-checker.sh
 echo -e "\033[0;33mScript setup complete, please refer to https://github.com/ReidWeb/linuxmotd/blob/master/README.md for instructions on how to complete the installation process \033[1;37m"
