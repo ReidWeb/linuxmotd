@@ -6,7 +6,7 @@ GROUPZ=`groups`
 USER=`whoami`
 ADMINS=`cat /etc/group | grep --regex "^sudo" | awk -F: '{print $4}' | tr ',' '|'`
 ADMINSLIST=`grep -E $ADMINS /etc/passwd | tr ':' ' ' | tr ',' ' ' | awk {'print $5,$6,"("$1")"'} | tr '\n' ',' | sed '$s/.$//'`
-DIR=`pwd`
+DIR=`dirname "$0"`
 UPDATESAVAIL=`cat $DIR/updates-available`
  
 if [[ $GROUPZ == "$USER sudo" ]]; then
