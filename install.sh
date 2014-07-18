@@ -5,13 +5,19 @@
 
 echo -ne "\033[0;32mPlease input installation directory > \033[1;37m"
 read dirinput
-size = ${#dirinput}
-elif  [[ $dirinput = 0 ]]
+inpsize=${#dirinput}
+
+if [ "$inpsize" -eq 0 ]
 then
-installdir = "/etc/dynmotd"
-else
-installdir = $dirinput
+echo "firstif"
+installdir="/etc/dynmotd"
 fi
+if [ "$inpsize" -gt 0 ]
+then
+echo "secondif"
+installdir=$dirinput
+fi
+
 
 mkdir $installdir
 cp dynmotd.sh $installdir/dynmotd.sh
