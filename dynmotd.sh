@@ -1,11 +1,15 @@
 #!/bin/bash
- 
+
+howmany() { echo $#; }
+
 PROCCOUNT=`ps -Afl | wc -l`
 PROCCOUNT=`expr $PROCCOUNT - 5`
 GROUPZ=`groups`
 USER=`whoami`
+SUDOUSERS=`cat /etc/group | grep --regex "^sudo" | awk -F: '{print $4}' | tr ',' ' '`
+NUMADMINS=`howmany $SUDOUSERS`
 ADMINS=`cat /etc/group | grep --regex "^sudo" | awk -F: '{print $4}' | tr ',' '|'`
-ADMINSLIST=`grep -E $ADMINS /etc/passwd | tr ':' ' ' | tr ',' ' ' | awk {'print $5,$6,"("$1")"'} | tr '\n' ',' | sed '$s/.$//'`
+ADMINSLIST=`grep -E $ADMINS /etc/passwd | tr ':' ' ' | tr ',' ' ' | awk {'print $5,$6,"("$1")"'} | tr '\n' ',' | sed '$s/.$//' | tr "," "\n" | head -$NUMADMINS | tr "\n" "," | sed 's/\(.*\),/\1 /'`
 DIR=`dirname "$0"`
 UPDATESAVAIL=`cat $DIR/updates-available`
  
